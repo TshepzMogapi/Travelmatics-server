@@ -17,13 +17,12 @@ namespace Travelmatics.Contacts
 
         public string LastName { get; set; }
 
-
         public string EmailAddress { get; set; }
 
         public DateTime CreationTime { get; set; }
 
 
-        public Contact()
+        protected Contact()
         {
             CreationTime = Clock.Now;
         }

@@ -46,7 +46,9 @@ namespace Travelmatics.Authorization.Accounts
                 true // Assumed email address is always confirmed. Change this if you want to implement email confirmation.
             );
 
-            //var isEmailConfirmationRequiredForLogin = await SettingManager.GetSettingValueAsync<bool>(AbpZeroSettingNames.UserManagement.IsEmailConfirmationRequiredForLogin);
+            //var isEmailConfirmationRequiredForLogin = false;
+
+            var isEmailConfirmationRequiredForLogin = await SettingManager.GetSettingValueAsync<bool>(AbpZeroSettingNames.UserManagement.IsEmailConfirmationRequiredForLogin);
 
             return new RegisterOutput
             {
