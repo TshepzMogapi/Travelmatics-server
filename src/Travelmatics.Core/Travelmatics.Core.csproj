@@ -25,4 +25,7 @@
   <ItemGroup>
     <Compile Remove="Contacts\EmptyClass.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="UserDetails\" />
+  </ItemGroup>
 </Project>

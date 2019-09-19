@@ -13,4 +13,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Travelmatics.Core\Travelmatics.Core.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Contacts\" />
+  </ItemGroup>
 </Project>

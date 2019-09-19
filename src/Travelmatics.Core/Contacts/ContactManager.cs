@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Abp.Domain.Repositories;
 using Abp.Domain.Services;
@@ -16,6 +18,13 @@ namespace Travelmatics.Contacts
             )
         {
             this.contactRepository = contactRepository;
+        }
+
+        public List<Contact> GetAllContacts()
+        {
+            var contacts = contactRepository.GetAll().OrderBy(contact => contact.FirstName).ToList();
+
+            return contacts;
         }
 
 
