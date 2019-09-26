@@ -25,16 +25,14 @@ namespace Travelmatics.EntityFrameworkCore
         {
             base.OnModelCreating(modelBuilder);
 
-            //modelBuilder.Entity<Contact>()
+            //modelBuilder.Entity<UserContact>()
             //    .HasKey(uc => new { uc.UserId, uc.ContactId });
 
-            //modelBuilder.Entity<Contact>()
+            //modelBuilder.Entity<UserContact>()
             //   .HasOne(uc => uc.User)
-            //   .WithMany(u => u.UserContacts)
             //   .HasForeignKey(ua => ua.UserId);
 
-            //modelBuilder.Entity<ContactDetail>()
-            //    .HasOne(uCd => uCd.User);
+          
         }
     }
 }

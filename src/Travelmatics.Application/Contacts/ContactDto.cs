@@ -5,7 +5,7 @@ using Abp.AutoMapper;
 namespace Travelmatics.Contacts
 {
     [AutoMapFrom(typeof(Contact))]
-    public class ContactDto : EntityDto<int>
+    public class ContactDto : EntityDto
     {
         public string FirstName { get; set; }
 

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Abp.Application.Services;
+using Abp.Application.Services.Dto;
 using Abp.Domain.Entities;
 using Abp.Domain.Repositories;
 using Travelmatics.Roles.Dto;
@@ -8,10 +9,10 @@ using Travelmatics.Roles.Dto;
 namespace Travelmatics.Contacts
 
 {
-    public interface IContactAppService : IAsyncCrudAppService<ContactDto, int, PagedRoleResultRequestDto, ContactDto, RoleDto>
+    public interface IContactAppService : IAsyncCrudAppService<ContactDto>
     {
 
-        Task<ContactDto> GetContacts(ContactDto input);
+        //Task<ListResultDto<ContactDto>> GetAllContacts();
 
     }
 }

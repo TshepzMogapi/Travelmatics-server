@@ -28,24 +28,13 @@ namespace Travelmatics.Contacts
         }
 
 
-        public async Task<Contact> CreateContactAsync(string name, string surname, string emailAddress)
+        public async Task<Contact> CreateContactAsync(Contact contact)
         {
 
-
-
-            var contact = new Contact
-            {
-                FirstName = name,
-                LastName = surname,
-                EmailAddress = emailAddress,
-                
-            };
-
-            await this.contactRepository.InsertAsync(contact);
-
-            await CurrentUnitOfWork.SaveChangesAsync();
+            contact = await contactRepository.InsertAsync(contact);
 
             return contact;
+
         }
     }
 }

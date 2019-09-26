@@ -18,38 +18,38 @@ namespace Travelmatics.Contacts
 
         public string EmailAddress { get; set; }
 
-        public long UserId { get; set; }
+        //public long UserId { get; set; }
 
-        public int ContactId { get; set; }
+        //public int ContactId { get; set; }
 
-        public User User { get; set; }
+        //public User User { get; set; }
 
-        public List<UserContact> UserContacts;
+        //public List<UserContact> UserContacts;
 
 
-        public Contact()
-        {
-            CreationTime = Clock.Now;
-        }
+        //public Contact()
+        //{
+        //    CreationTime = Clock.Now;
+        //}
 
-        public Contact(string firstName, string lastName = null)
-            : this()
-        {
-            FirstName = firstName;
-            LastName = lastName;
-        }
+        //public Contact(string firstName, string lastName = null)
+        //    : this()
+        //{
+        //    FirstName = firstName;
+        //    LastName = lastName;
+        //}
 
-        public static Contact Create(string firstName, string lastName = null)
-        {
-            var contact = new Contact
-            {
-                FirstName = firstName,
-                LastName = lastName
+        //public static Contact Create(string firstName, string lastName = null)
+        //{
+        //    var contact = new Contact
+        //    {
+        //        FirstName = firstName,
+        //        LastName = lastName
 
-            };
+        //    };
 
-            return contact;
-        }
+        //    return contact;
+        //}
     }
 
    

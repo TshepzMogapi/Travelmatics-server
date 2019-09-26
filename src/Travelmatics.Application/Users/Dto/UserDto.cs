@@ -36,5 +36,13 @@ namespace Travelmatics.Users.Dto
         public DateTime CreationTime { get; set; }
 
         public string[] RoleNames { get; set; }
+
+        public string IdNumber { get; set; }
+
+        public string PassportNumber { get; set; }
+
+        public string ProfilePicUrl { get; set; }
+
+        public int Age { get; set; }
     }
 }

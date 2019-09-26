@@ -10,10 +10,11 @@ namespace Travelmatics.Authorization.Users
     {
         public const string DefaultPassword = "123qwe";
 
-
         public string IdNumber { get; set; }
 
         public string PassportNumber { get; set; }
+
+        public string ProfilePicUrl { get; set; }
 
         public int Age { get; set; }
 
@@ -22,7 +23,7 @@ namespace Travelmatics.Authorization.Users
         //public ContactDetail ContactDetails { get; set; }
 
 
-        public List<Contact> UserContacts { get; set; }
+        //public List<Contact> UserContacts { get; set; }
 
 
         public static string CreateRandomPassword()

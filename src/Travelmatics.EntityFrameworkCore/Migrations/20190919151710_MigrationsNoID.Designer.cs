@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Travelmatics.EntityFrameworkCore;
 
 namespace Travelmatics.Migrations
 {
     [DbContext(typeof(TravelmaticsDbContext))]
-    partial class TravelmaticsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20190919151710_MigrationsNoID")]
+    partial class MigrationsNoID
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1014,8 +1016,6 @@ namespace Travelmatics.Migrations
                     b.Property<string>("PhoneNumber")
                         .HasMaxLength(32);
 
-                    b.Property<string>("ProfilePicUrl");
-
                     b.Property<string>("SecurityStamp")
                         .HasMaxLength(128);
 
@@ -1071,7 +1071,11 @@ namespace Travelmatics.Migrations
 
                     b.Property<string>("LastName");
 
+                    b.Property<long?>("UserId");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Contacts");
                 });
@@ -1275,6 +1279,13 @@ namespace Travelmatics.Migrations
                     b.HasOne("Travelmatics.Authorization.Users.User", "LastModifierUser")
                         .WithMany()
                         .HasForeignKey("LastModifierUserId");
+                });
+
+            modelBuilder.Entity("Travelmatics.Contacts.Contact", b =>
+                {
+                    b.HasOne("Travelmatics.Authorization.Users.User", "User")
+                        .WithMany("UserContacts")
+                        .HasForeignKey("UserId");
                 });
 
             modelBuilder.Entity("Travelmatics.MultiTenancy.Tenant", b =>

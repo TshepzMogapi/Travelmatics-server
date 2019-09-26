@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Travelmatics.EntityFrameworkCore;
 
 namespace Travelmatics.Migrations
 {
     [DbContext(typeof(TravelmaticsDbContext))]
-    partial class TravelmaticsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20190919170435_MigrationsTesting")]
+    partial class MigrationsTesting
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1013,8 +1015,6 @@ namespace Travelmatics.Migrations
 
                     b.Property<string>("PhoneNumber")
                         .HasMaxLength(32);
-
-                    b.Property<string>("ProfilePicUrl");
 
                     b.Property<string>("SecurityStamp")
                         .HasMaxLength(128);
