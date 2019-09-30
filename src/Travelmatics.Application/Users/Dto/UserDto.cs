@@ -44,5 +44,10 @@ namespace Travelmatics.Users.Dto
         public string ProfilePicUrl { get; set; }
 
         public int Age { get; set; }
+
+        public int PhoneNumber { get; set; }
+
+        public Gender Gender { get; set; }
+
     }
 }

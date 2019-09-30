@@ -10,8 +10,8 @@ using Travelmatics.EntityFrameworkCore;
 namespace Travelmatics.Migrations
 {
     [DbContext(typeof(TravelmaticsDbContext))]
-    [Migration("20190919151710_MigrationsNoID")]
-    partial class MigrationsNoID
+    [Migration("20190930101827_Age_Number_Gender")]
+    partial class Age_Number_Gender
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -1016,6 +1016,8 @@ namespace Travelmatics.Migrations
                     b.Property<string>("PhoneNumber")
                         .HasMaxLength(32);
 
+                    b.Property<string>("ProfilePicUrl");
+
                     b.Property<string>("SecurityStamp")
                         .HasMaxLength(128);
 
@@ -1071,11 +1073,7 @@ namespace Travelmatics.Migrations
 
                     b.Property<string>("LastName");
 
-                    b.Property<long?>("UserId");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("Contacts");
                 });
@@ -1279,13 +1277,6 @@ namespace Travelmatics.Migrations
                     b.HasOne("Travelmatics.Authorization.Users.User", "LastModifierUser")
                         .WithMany()
                         .HasForeignKey("LastModifierUserId");
-                });
-
-            modelBuilder.Entity("Travelmatics.Contacts.Contact", b =>
-                {
-                    b.HasOne("Travelmatics.Authorization.Users.User", "User")
-                        .WithMany("UserContacts")
-                        .HasForeignKey("UserId");
                 });
 
             modelBuilder.Entity("Travelmatics.MultiTenancy.Tenant", b =>

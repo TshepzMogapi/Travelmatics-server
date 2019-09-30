@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Travelmatics.Migrations
 {
-    public partial class ProFilePicMigration : Migration
+    public partial class Age_Number_Gender : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
